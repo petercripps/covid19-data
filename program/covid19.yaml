@@ -1,0 +1,19 @@
+countries:
+  - France
+  - Germany
+  - Italy
+  - United Kingdom
+  - Russia
+  - US
+  - Canada
+  - Spain
+  - China
+  - Belgium
+  - Brazil
+operation: rate
+graph: True
+fdate: '2020-02-01'
+tdate: '2021-01-03'
+province: ""
+rate: hundred
+measure: Deaths
