@@ -2,17 +2,14 @@ import pandas as pd
 import numpy as np
 import datetime as dt
 import csv
+from readargs import read_yaml_file
 
-# Define absolute path to where datasets are found.
-path = "/Users/petercripps/Code/Python/Learning/datasets/"
-
-# Define filenames. Covid data is a CSV file of the form:
+# Two datasets are used by this program. Covid data is a CSV file of the form:
 # Date,Country/Region,Province/State,Confirmed,Recovered,Deaths.
-coviddata = "covid19.csv"
-
 # Population data is a CSV file of the form:
 # Country Name,Country Code,Year,Value
-popdata = "population.csv"
+# The location of both of these plus the pathname is defined in the YAML file: datasets.yaml.
+dataloc_file = "datasets.yaml"
 
 # Use this dictionary for differences between population dataset
 # and covid dataset. Name in covid dataset is the one that must be passed in
@@ -30,11 +27,12 @@ no_country_data = ["Australia", "China", "Canada"]
 
 # Return COVID-19 info for country, province and date.
 def covid_info_data(country, province, date):
+    filedict = read_yaml_file(dataloc_file)
     df4 = pd.DataFrame()
     if (country != "") and (date != ""):
         try:
             # Read dataset as a panda dataframe
-            df1 = pd.read_csv(path + coviddata)
+            df1 = pd.read_csv(filedict["path"] + filedict["coviddata"])
 
             # Get subset of data for specified country/region
             df2 = df1[df1["Country/Region"] == country]
@@ -65,10 +63,11 @@ def covid_info_data(country, province, date):
 # Returns an array of pandas dataframes, one for each country.
 def covid_rate_data(countries, fdate, tdate):
     country_data = []
+    filedict = read_yaml_file(dataloc_file)
     if (countries != []) and (fdate != "") and (tdate != ""):
         try:
             # Read dataset as a pandas data frame
-            df_all = pd.read_csv(path + coviddata)
+            df_all = pd.read_csv(filedict["path"] + filedict["coviddata"])
             for country in countries:
                 
                 # Get subset of data for specified country/region
@@ -112,12 +111,13 @@ def covid_rate_data(countries, fdate, tdate):
 
 # Return population of country for year (or 0 if none found).
 def pop_data(country, year):
+    filedict = read_yaml_file(dataloc_file)
     # Check if country has an alternate name for this dataset
     if country in alternatives:
         country = alternatives[country]
     try:
         # Read dataset as a panda dataframe
-        pop_df = pd.read_csv(path + popdata)
+        pop_df = pd.read_csv(filedict["path"]+ filedict["popdata"])
     
         # Get data for particular country
         df1 = pop_df[pop_df["Country Name"] == country]

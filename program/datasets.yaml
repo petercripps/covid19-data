@@ -1,0 +1,3 @@
+path: '/Users/petercripps/Code/covid19-data/datasets/'
+coviddata: 'covid19.csv'
+popdata: 'population.csv'

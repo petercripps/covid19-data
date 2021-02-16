@@ -93,7 +93,7 @@ def init_argdict():
         "measure": "Deaths", # One of: Deaths | Confirmed | Recovered
         "rate": "absolute"} # One of: absolute | hundred | million | change
 
-# Reads a file in yaml format
+# Reads a file in yaml format. Option of printing out file in debug mode
 # Parameters:
 # yfile : str
 #   The file location of the yaml file
@@ -105,6 +105,8 @@ def read_yaml_file(yfile):
     try:
         with open(yfile) as f:
             data = yaml.load(f, Loader=yaml.FullLoader)
+            if False:
+                print(data)
         return data
     except:
         print("YAML file error: ", yfile)

@@ -3,12 +3,13 @@
 Prints various country specific data on the COVID-19 pandemic using data from: https://datahub.io/docs/about.
 
 ## Obtaining the Data
+The Covid-19 data can be found here: https://datahub.io/core/covid-19#resource-time-series-19-covid-combined. Look for 'time-series-19-covid-combined'.
 
-The contents of covid19.csv can be found here: https://datahub.io/core/covid-19#resource-time-series-19-covid-combined. Look for 'time-series-19-covid-combined'.
+Population data can be found here: https://datahub.io/core/population.
 
-population.csv that can be found here: https://datahub.io/core/population.
-
-In each case download the data (as CSV) into the files as named into a folder and set the path to the folder in the variable path. This variable is defined at the top of covid19.py. There is also a basic UI for entering data that way. Just use appwindow.py.
+In each case download the data (as CSV) into a folder of choice and set the path and file names in the `datasets.yaml` file. 
+ 
+There is also a basic UI for entering data. Run this usin `python3 appwindow.py`.
 
 ## General Usage
 covid19.py info | rate [options]<br>
