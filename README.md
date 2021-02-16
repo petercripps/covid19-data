@@ -1,18 +1,19 @@
 # covid19-data
 ## Description
-Prints various country specific data on the COVID-19 pandemic using data from: https://datahub.io/docs/about.
+Prints and creates graphs of various country specific data on the COVID-19 pandemic using data from: https://datahub.io/docs/about.
 
 ## Obtaining the Data
 The Covid-19 data can be found here: https://datahub.io/core/covid-19#resource-time-series-19-covid-combined. Look for 'time-series-19-covid-combined'.
 
 Population data can be found here: https://datahub.io/core/population.
 
-In each case download the data (as CSV) into a folder of choice and set the path and file names in the `datasets.yaml` file. 
+In each case download the data (as CSV) into a folder of choice and set the path and file names in the `config.yaml` file. 
  
-There is also a basic UI for entering data. Run this usin `python3 appwindow.py`.
+There is also a basic UI for entering data. Run this using:
+`python3 appwindow.py`.
 
 ## General Usage
-covid19.py info | rate [options]<br>
+python3 covid19.py info | rate [options]<br>
 
 'info' shows general COVID-19 data for a given country.<br> 
 
@@ -31,7 +32,7 @@ Options are:<br>
 -g (optional):              Draws a graph of the data<br>
 -r (optional): absolute | hundred | million specifies how death rate is calculated, absolute number, per hundred thousand or per million<br>
 
-If no parameters are provided the program will look for a file called 'covid19.yaml' and will read data from that.
+If no parameters are provided the program will look for a file called `covid19.yaml` and will read data from that.
 An example of this file is:<br>
 
   countries:<br>
