@@ -8,7 +8,7 @@ from readargs import read_yaml_file
 # Date,Country/Region,Province/State,Confirmed,Recovered,Deaths.
 # Population data is a CSV file of the form:
 # Country Name,Country Code,Year,Value
-# The location of both of these plus the pathname is defined in the YAML file: datasets.yaml.
+# The location of both of these plus the pathname is defined in the YAML file: config.yaml.
 config_file = "config.yaml"
 
 # Use this dictionary for differences between population dataset
@@ -112,6 +112,7 @@ def covid_rate_data(countries, fdate, tdate):
 # Return population of country for year (or 0 if none found).
 def pop_data(country, year):
     configdict = read_yaml_file(config_file)
+    
     # Check if country has an alternate name for this dataset
     if country in alternatives:
         country = alternatives[country]
@@ -137,7 +138,7 @@ def inc_date(date, amt):
     date_time_obj += dt.timedelta(days=amt)
     return date_time_obj.strftime('%Y-%m-%d')
 
-# Read list of countries
+# Read list of allowed countries
 def country_data():
     countries = []
     with open('countries.txt', mode ='r') as file: 
