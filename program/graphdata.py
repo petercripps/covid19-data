@@ -5,9 +5,10 @@ from bokeh.models import DatetimeTickFormatter
 from calcdata import calc_proportional_rate, calc_rates
 
 # See https://docs.bokeh.org/en/latest/docs/reference/colors.html for colors    
-line_colors = ["darkblue","darkcyan","darkgoldenrod","darkgray","darkgreen","darkgrey","darkkhaki","darkmagenta","darkolivegreen","darkorange",
-    "darkorchid","darkred","darksalmon","darkseagreen","darkslateblue","darkslategray","darkslategrey","darkturquoise","darkviolet","deeppink",
-    "deepskyblue","dodgerblue","firebrick","forestgreen","fuchsia","gold","goldenrod","gray","green","honeydew","hotpink","indianred","indigo"]  
+line_colors = ["darkblue","darkcyan","darkgoldenrod","darkgray","darkgreen","darkmagenta","darkolivegreen","darkorange","darkviolet",
+    "darkorchid","darkred","darksalmon","darkseagreen","darkslateblue","darkslategray","darkslategrey","darkturquoise","deeppink",
+    "deepskyblue","dodgerblue","firebrick","forestgreen","fuchsia","gold","goldenrod","darkkhaki","gray","green","honeydew","hotpink",
+    "indianred","indigo"]  
 
 # Create a line graph of COVID-19 rates for each country specified between the given dates.
 # Up to 15 countries can be plotted (but only constrained by number of line colours)
