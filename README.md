@@ -1,6 +1,6 @@
 # covid19-data
 ## Description
-Prints and creates graphs of various country specific data on the COVID-19 pandemic using data from: https://datahub.io/docs/about.
+Creates and prints graphs of various country specific data on the COVID-19 pandemic using data from: https://datahub.io/docs/about.
 
 ## Obtaining the Data
 The Covid-19 data can be found here: https://datahub.io/core/covid-19#resource-time-series-19-covid-combined. Look for 'time-series-19-covid-combined'.

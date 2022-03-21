@@ -1,3 +1,10 @@
+# Entry point for command line version of COVID19 Data Program. 
+# Ensure these packages are installed using pip3:
+# pip3 install numpy
+# pip3 install pandas
+# pip3 install pyyaml
+# pip3 install bokeh
+# Check using 'pip3 list'
 import pandas as pd
 import sys
 from readargs import read_args
